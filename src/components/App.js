@@ -2,18 +2,18 @@ import React from 'react'
 import '../styles/App.css';
 const App = () => {
 
-  let textInputValue = ''; // Variable to store text input value
-  let numInputValue = ''; // Variable to store number input value
+  let textInputValue = '';
+  let numInputValue = '';
 
   const handleInput = (event) => {
     const inputId = event.target.id;
     const inputValue = event.target.value;
 
     if (inputId === 'text-input') {
-      textInputValue = inputValue !== undefined ? `${textInputValue}${inputValue}` : '';
+      textInputValue = inputValue;
       console.log(`Input in #text-input is ${textInputValue}`);
     } else if (inputId === 'num-input') {
-      numInputValue = inputValue !== undefined ? `${numInputValue}${inputValue}` : '';
+      numInputValue = inputValue;
       console.log(`Input in #num-input is ${numInputValue}`);
     }
   };
