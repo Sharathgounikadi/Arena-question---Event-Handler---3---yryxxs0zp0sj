@@ -2,12 +2,21 @@ import React from 'react'
 import '../styles/App.css';
 const App = () => {
 
-  const handleInput = (event) =>{
-   // use console.log
-   console.log(event.target.value);
-  }
+  let textInputValue = ''; // Variable to store text input value
+  let numInputValue = ''; // Variable to store number input value
 
-  // do not change id of input elements
+  const handleInput = (event) => {
+    const inputId = event.target.id;
+    const inputValue = event.target.value;
+
+    if (inputId === 'text-input') {
+      textInputValue = inputValue !== undefined ? `${textInputValue}${inputValue}` : '';
+      console.log(`Input in #text-input is ${textInputValue}`);
+    } else if (inputId === 'num-input') {
+      numInputValue = inputValue !== undefined ? `${numInputValue}${inputValue}` : '';
+      console.log(`Input in #num-input is ${numInputValue}`);
+    }
+  };
   return (
     <div id="main">
       <label htmlFor='text-input'>Text Input:- </label>
